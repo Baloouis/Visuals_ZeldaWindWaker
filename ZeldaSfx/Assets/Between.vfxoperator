@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Type:
     m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
       PublicKeyToken=b77a5c561934e089
-  condition: 3
+  condition: 2
 --- !u!114 &114350483966674995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   - {fileID: 114350483966675006}
   m_ExposedName: min
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   - {fileID: 114350483966675008}
   m_ExposedName: max
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   - {fileID: 114350483966675010}
   m_ExposedName: value
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
