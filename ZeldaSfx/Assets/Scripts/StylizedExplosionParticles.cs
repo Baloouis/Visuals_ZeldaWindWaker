@@ -18,7 +18,9 @@ public class StylizedExplosionParticles : MonoBehaviour
     private float streakParticleRadius;
     [SerializeField]
     private int nbStreakParticles;
-
+    [Header("Sparks Particles")]
+    [SerializeField]
+    private List<VisualEffect> sparksParticles;
 
     private List<VisualEffect> _streakParticles;
     void Start()
@@ -45,7 +47,12 @@ public class StylizedExplosionParticles : MonoBehaviour
                 _streakParticles[i].Play();
             }
         }
-        
+
+        for (int i = 0; i < sparksParticles.Count; i++)
+        {
+            sparksParticles[i].Play();
+        }
+
     }
     public void ResetStreakParticles()
     {
