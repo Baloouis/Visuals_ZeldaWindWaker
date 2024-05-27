@@ -22,7 +22,8 @@ public class StylizedExplosionParticles : MonoBehaviour
     [SerializeField]
     private List<VisualEffect> sparksParticles;
 
-    private List<VisualEffect> _streakParticles;
+    [SerializeField]
+    private List<VisualEffect> streakParticles;
     void Start()
     {
         
@@ -30,23 +31,18 @@ public class StylizedExplosionParticles : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
-        {
-            Play();
-        }
+
     }
 
     public void Play()
     {
         mainVfx.Play();
         
-        if(_streakParticles!=null)
+        for (int i = 0; i < streakParticles.Count; i++)
         {
-            for (int i = 0; i < streakParticleParent.transform.childCount; i++)
-            {
-                _streakParticles[i].Play();
-            }
+            streakParticles[i].Play();
         }
+        
 
         for (int i = 0; i < sparksParticles.Count; i++)
         {
@@ -58,7 +54,7 @@ public class StylizedExplosionParticles : MonoBehaviour
     {
         DestroyChildrenInEditor(streakParticleParent);
 
-        _streakParticles = new List<VisualEffect>();
+        streakParticles = new List<VisualEffect>();
         for (int i = 0; i < nbStreakParticles; i++) 
         {
             VisualEffect partSyst = Instantiate(streakParticlePrefab,streakParticleParent.transform);
@@ -68,7 +64,7 @@ public class StylizedExplosionParticles : MonoBehaviour
             partSyst.transform.localPosition = particleLocalPos* streakParticleRadius;
             partSyst.transform.localEulerAngles = new Vector3(0, -theta, 0);
 
-            _streakParticles.Add(partSyst);
+            streakParticles.Add(partSyst);
         }
     }
 
