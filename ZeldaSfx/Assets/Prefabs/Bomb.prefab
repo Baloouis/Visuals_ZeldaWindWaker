@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 8721961939673150222}
   - {fileID: 9192733693178110563}
+  - {fileID: 9012278943984996915}
   - {fileID: 5941034881020088784}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,15 +54,127 @@ MonoBehaviour:
   bombParticles: {fileID: 378223558010718383}
   bombPreExplosionParticles:
   - {fileID: 5285218783082851927}
-  scaleCoefAnim: 3
+  - {fileID: 5049271778178567103}
+  scaleCoefAnim: 2.5
   easing: 5
   bombRedColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 0}
   bombMainMesh: {fileID: 4190296645213644865}
   durationFirstPingPong: 0.8
   timeDecayPingPong: 0.75
   timeStopEpsilon: 0.1
-  scaleAnimFraction: 0.1
+  scaleAnimFraction: 0.08
   colorAnimDelay: 0
+--- !u!1 &2492334436994945020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9012278943984996915}
+  - component: {fileID: 5049271778178567103}
+  - component: {fileID: 8439137431504250514}
+  m_Layer: 0
+  m_Name: Bomb Rope Sparkles VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9012278943984996915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492334436994945020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.05, y: 0.726, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1759220757218624201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!2083052967 &5049271778178567103
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492334436994945020}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: c1bd11b138d847248bd6bb18dffe8a48, type: 3}
+  m_InitialEventName: ' '
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
+--- !u!73398921 &8439137431504250514
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492334436994945020}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -2
 --- !u!1 &5521681706394263249
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,17 +740,17 @@ PrefabInstance:
     - target: {fileID: 6550804151709023534, guid: dbc2448be9b8e0f40b77c3aa25fda12a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6550804151709023534, guid: dbc2448be9b8e0f40b77c3aa25fda12a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6550804151709023534, guid: dbc2448be9b8e0f40b77c3aa25fda12a,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6550804151709023534, guid: dbc2448be9b8e0f40b77c3aa25fda12a,
         type: 3}
