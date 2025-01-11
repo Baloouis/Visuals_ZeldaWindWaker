@@ -21,8 +21,8 @@ public class BombScript : MonoBehaviour
     [SerializeField]
     private float scaleCoefAnim;
 
-    [SerializeField]
-    private Ease easing;
+    [SerializeField] private Ease easingScale;
+    [SerializeField] private Ease easingColor;
 
     public Color bombRedColor;
 
@@ -64,7 +64,7 @@ public class BombScript : MonoBehaviour
             float delay = colorAnimDuration* (1- scaleAnimFraction);
             bombMeshesParent.transform.DOScale(scaleCoefAnim, dur)
                 .SetDelay(delay)
-                .SetEase(easing)
+                .SetEase(easingScale)
                 .OnComplete(
                     () => {
                         foreach (var par in bombPreExplosionParticles)
@@ -88,20 +88,19 @@ public class BombScript : MonoBehaviour
         tweenSequence.SetDelay(colorAnimDelay);
         float curDuration = durationFirstPingPong;
 
-        Ease easingColorTween = Ease.InOutQuad;
         int i = 1;
         do
         {
             curDuration = curDuration * timeDecayPingPong;
 
-            tweenSequence.Append(_bombMainMat.DOColor(bombRedColor, curDuration).SetEase(easingColorTween));
-            tweenSequence.Append(_bombMainMat.DOColor(_bombBlueColor, curDuration).SetEase(easingColorTween));
+            tweenSequence.Append(_bombMainMat.DOColor(bombRedColor, curDuration).SetEase(easingColor));
+            tweenSequence.Append(_bombMainMat.DOColor(_bombBlueColor, curDuration).SetEase(easingColor));
 
 
             i++;
         } while (curDuration > timeStopEpsilon && i< _maxLoopColorAnim);
 
-        tweenSequence.Append(_bombMainMat.DOColor(bombRedColor, curDuration).SetEase(easingColorTween));
+        tweenSequence.Append(_bombMainMat.DOColor(bombRedColor, curDuration).SetEase(easingColor));
 
 
         print("i = " + i);

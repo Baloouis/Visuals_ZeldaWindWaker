@@ -56,7 +56,8 @@ MonoBehaviour:
   - {fileID: 5285218783082851927}
   - {fileID: 5049271778178567103}
   scaleCoefAnim: 2.5
-  easing: 5
+  easingScale: 26
+  easingColor: 7
   bombRedColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 0}
   bombMainMesh: {fileID: 4190296645213644865}
   durationFirstPingPong: 0.8
