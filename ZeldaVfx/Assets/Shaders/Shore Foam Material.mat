@@ -61,7 +61,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WetSandAlpha: 0.9
-    - _waveProgression: 2.93
+    - _waveProgression: 6.77
     m_Colors:
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _Offset: {r: 0, g: 0.3, b: 0, a: 0}

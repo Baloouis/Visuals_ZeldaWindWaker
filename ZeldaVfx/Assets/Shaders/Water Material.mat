@@ -46,6 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DistanceFade: 17.56
     - _FlowSpeed: 0.001
     - _FlowStrength: 0.1
     - _FoamAlpha: 1
@@ -62,19 +63,20 @@ Material:
     - _noiseRemapMax: 0
     - _noiseRemapOutMinMax: 5
     - _noiseScale: 5
-    - _waveHeight_1: 0.01
-    - _waveHeight_2: 0.01
+    - _waveHeight_1: 0.1
+    - _waveHeight_2: 0.05
     - _waveSpeed_1: 1
     - _waveSpeed_2: 2
     m_Colors:
     - _DarkFoamColor: {r: 0, g: 0, b: 0, a: 0}
     - _DarkWaterColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FlowMapTiling: {r: 0.2, g: 0.2, b: 0, a: 0}
+    - _FlowMapTiling: {r: 0.04, g: 0.04, b: 0, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _OffsetFoamTex: {r: 1.15, g: 1, b: 0, a: 0}
+    - _RefWorldPos: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowFoamColor: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowFoamOffset: {r: 0.15, g: 0.6, b: 0, a: 0}
-    - _TilingFoamTex: {r: 5, g: 5, b: 0, a: 0}
+    - _TilingFoamTex: {r: 40, g: 40, b: 0, a: 0}
     - _WaterBaseColor: {r: 0, g: 0.32777837, b: 0.5283019, a: 0}
     - _noiseRemapValues: {r: -30, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
