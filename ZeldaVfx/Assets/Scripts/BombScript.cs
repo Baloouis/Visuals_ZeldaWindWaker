@@ -29,6 +29,9 @@ public class BombScript : MonoBehaviour
     [SerializeField]
     private MeshRenderer bombMainMesh;
 
+    [SerializeField]
+    private Renderer[] allRenderers;
+
     public float durationFirstPingPong;
     public float timeDecayPingPong = 0.5f;
     public float timeStopEpsilon = 0.1f;
@@ -37,11 +40,13 @@ public class BombScript : MonoBehaviour
 
     private Material _bombMainMat;
     private Color _bombBlueColor;
+    private int _maxLoopColorAnim = 50;
 
     void Start()
     {
         _bombMainMat = bombMainMesh.material;
         _bombBlueColor = _bombMainMat.color;
+
     }
 
 
@@ -49,38 +54,52 @@ public class BombScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _bombMainMat.color = _bombBlueColor;
-            foreach (var par in bombPreExplosionParticles)
-            {
-                par.Play();
-            }
-            //color tween
-            float colorAnimDuration = PlayColorAnim();
-
-            
-            
-            //scale tween and instanciate explosion particles
-            float dur = colorAnimDuration * scaleAnimFraction;
-            float delay = colorAnimDuration* (1- scaleAnimFraction);
-            bombMeshesParent.transform.DOScale(scaleCoefAnim, dur)
-                .SetDelay(delay)
-                .SetEase(easingScale)
-                .OnComplete(
-                    () => {
-                        foreach (var par in bombPreExplosionParticles)
-                        {
-                            par.Stop();
-                        }
-                        bombMeshesParent.transform.localScale = Vector3.one;
-                        //Instantiate(bombParticlesPrefab, bombMeshesParent.transform.position, Quaternion.identity, null);
-                        bombParticles.Play();
-                    }
-                    ).Play();
-            
+            StartExplosionProcess();
         }
     }
 
-    private int _maxLoopColorAnim = 50;
+    private void SetVisible(bool isVisible)
+    {
+        foreach (Renderer rend in allRenderers)
+        {
+            rend.enabled = isVisible;
+        }
+
+    }
+
+    [ContextMenu("StartExplosionProcess")]
+    private void StartExplosionProcess()
+    {
+        SetVisible(true);
+
+        _bombMainMat.color = _bombBlueColor;
+        foreach (var par in bombPreExplosionParticles)
+        {
+            par.Play();
+        }
+        //color tween
+        float colorAnimDuration = PlayColorAnim();
+
+        //scale tween and instanciate explosion particles
+        float dur = colorAnimDuration * scaleAnimFraction;
+        float delay = colorAnimDuration * (1 - scaleAnimFraction);
+        bombMeshesParent.transform.DOScale(scaleCoefAnim, dur)
+            .SetDelay(delay)
+            .SetEase(easingScale)
+            .OnComplete(
+                () => 
+                {
+                    foreach (var par in bombPreExplosionParticles)
+                    {
+                        par.Stop();
+                    }
+                    bombMeshesParent.transform.localScale = Vector3.one;
+                    //Instantiate(bombParticlesPrefab, bombMeshesParent.transform.position, Quaternion.identity, null);
+                    bombParticles.Play();
+                    SetVisible(false);
+                }
+                ).Play();
+    }
     private float PlayColorAnim()
     {
         Sequence tweenSequence = DOTween.Sequence();

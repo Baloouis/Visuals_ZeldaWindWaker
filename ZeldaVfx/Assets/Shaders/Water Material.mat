@@ -46,15 +46,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistanceFade: 17.56
+    - _DistanceFade: 20
+    - _DistanceFadeInRange: 5
+    - _DistanceFadeMin: 0
+    - _DistanceFadeOutRange: 15
     - _FlowSpeed: 0.001
-    - _FlowStrength: 0.1
+    - _FlowStrength: 0.05
     - _FoamAlpha: 1
     - _FoamShadowAlpha: 0.5
     - _FoamTexLerp: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ShadowFoamAlpha: 0.25
+    - _ShadowFoamAlpha: 0.3
     - _foamTexLerp: 0.489
     - _heightWaveSpeed1: 1
     - _heightWaveSpeed_1: 1
@@ -70,13 +73,13 @@ Material:
     m_Colors:
     - _DarkFoamColor: {r: 0, g: 0, b: 0, a: 0}
     - _DarkWaterColor: {r: 0, g: 0, b: 0, a: 0}
-    - _FlowMapTiling: {r: 0.04, g: 0.04, b: 0, a: 0}
+    - _FlowMapTiling: {r: 1.6, g: 1.6, b: 0, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
     - _OffsetFoamTex: {r: 1.15, g: 1, b: 0, a: 0}
-    - _RefWorldPos: {r: 0, g: 0, b: 0, a: 0}
+    - _RefWorldPos: {r: -0.39, g: 0, b: -0.31, a: 0}
     - _ShadowFoamColor: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowFoamOffset: {r: 0.15, g: 0.6, b: 0, a: 0}
-    - _TilingFoamTex: {r: 40, g: 40, b: 0, a: 0}
+    - _TilingFoamTex: {r: 50, g: 50, b: 0, a: 0}
     - _WaterBaseColor: {r: 0, g: 0.32777837, b: 0.5283019, a: 0}
     - _noiseRemapValues: {r: -30, g: 30, b: 0, a: 0}
   m_BuildTextureStacks: []
